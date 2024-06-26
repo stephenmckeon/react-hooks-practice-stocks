@@ -1,13 +1,15 @@
-import React from "react";
-import Stock from "./Stock";
+import React from "react"
+import Stock from "./Stock"
 
-function StockContainer() {
+function StockContainer({ handleClick, stocks, title }) {
   return (
     <div>
-      <h2>Stocks</h2>
-      {/* render stock list here*/}
+      <h2>{title}</h2>
+      {stocks.map((stock) => (
+        <Stock key={stock.id} stock={stock} onClick={handleClick} />
+      ))}
     </div>
-  );
+  )
 }
 
-export default StockContainer;
+export default StockContainer
